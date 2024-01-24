@@ -5,6 +5,10 @@
 This is the protocol of Fish Chassis System(CHS). Based on Mavlink v2.     
 Author: qianwan.Jin
 
+>Version: 2.0   
+Generate Date: 2024/01/24     
+Description: Add remoter message  
+
 >Version: 1.0   
 Generate Date: 2023/12/27     
 Description: Creat this protocol  
@@ -89,6 +93,19 @@ Source: [FishChassis.xml](./FishChassis.xml)
   | enable_chassis  | uint8_t  | / | Boolean. Set 1/0 to enable/disable chassis's close-loop control. Invalid with UINT8_MAX. |
   | enable_servos  | uint8_t  | / | Boolean. Set true to enable/disable servo pwm generating. Invalid with UINT8_MAX. |
   | reset_quaternion | uint8_t | / | Boolean. Set true to reset quaternion. Invalid with UINT8_MAX. |
+
+- **chs_remoter_info**
+Feedback remoter message.
+
+  | Field      | Type     | Units  | Description |
+  | ---------- | -------- | :----: | ----------- |
+  | switch_messgae  | uint8_t  | / | Bit-0:isOffline(0-only,1-offline), Bit[1-2]:SwitchLeft(0-0b00,1-0b01,2-0x10), Bit[3-4]:SwitchRight(0-0b00,1-0b01,2-0x10) |
+  | channel_0  | int16_t  | / | -660 to +660. Right-Upward is orientation. |
+  | channel_1 | int16_t | / | -660 to +660. Right-Upward is orientation. |
+  | channel_2  | int16_t  | / | -660 to +660. Right-Upward is orientation. |
+  | channel_3 | int16_t | / | -660 to +660. Right-Upward is orientation. |
+  | wheel  | int16_t  | / | -660 to +660. Counter-clockwise is orientation. |
+
 
 ## Sample
 #### Logic
