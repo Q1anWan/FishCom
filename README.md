@@ -99,7 +99,7 @@ Feedback remoter message.
 
   | Field      | Type     | Units  | Description |
   | ---------- | -------- | :----: | ----------- |
-  | switch_messgae  | uint8_t  | / | Bit-0:isOffline(0-only,1-offline), Bit[1-2]:SwitchLeft(0-0b00,1-0b01,2-0x10), Bit[3-4]:SwitchRight(0-0b00,1-0b01,2-0x10) |
+  | switch_messgae  | uint8_t  | / | Bit-0:isOnline(0-offline,1-online), Bit[1-2]:SwitchLeft(0-0b00,1-0b01,2-0x10), Bit[3-4]:SwitchRight(0-0b00,1-0b01,2-0x10) |
   | channel_0  | int16_t  | / | -660 to +660. Right-Upward is orientation. |
   | channel_1 | int16_t | / | -660 to +660. Right-Upward is orientation. |
   | channel_2  | int16_t  | / | -660 to +660. Right-Upward is orientation. |

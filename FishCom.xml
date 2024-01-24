@@ -56,7 +56,7 @@
 		<!-- Remoter Feedback -->
 		<message id="5" name="CHS_REMOTER_INFO">
 			<description>Control chassis items.</description>
-			<field type="uint8_t" name="switch_messgae" instance="0" invalid="UINT8_MAX">Bit-0:isOffline(0-only,1-offline), Bit[1-2]:SwitchLeft(0-0b00,1-0b01,2-0x10), Bit[3-4]:SwitchRight(0-0b00,1-0b01,2-0x10)</field>
+			<field type="uint8_t" name="switch_messgae" instance="0" invalid="UINT8_MAX">Bit-0:isOnline(0-offline,1-online), Bit[1-2]:SwitchLeft(0-0b00,1-0b01,2-0x10), Bit[3-4]:SwitchRight(0-0b00,1-0b01,2-0x10)</field>
 			<field type="int16_t" name="channel_0" instance="0" invalid="UINT16_MAX">-660 to +660. Right-Upward is orientation.</field>
 			<field type="int16_t" name="channel_1" instance="0" invalid="UINT16_MAX">-660 to +660. Right-Upward is orientation.</field>
 			<field type="int16_t" name="channel_2" instance="0" invalid="UINT16_MAX">-660 to +660. Right-Upward is orientation.</field>

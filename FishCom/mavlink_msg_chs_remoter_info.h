@@ -10,7 +10,7 @@ typedef struct __mavlink_chs_remoter_info_t {
  int16_t channel_2; /*<  -660 to +660. Right-Upward is orientation.*/
  int16_t channel_3; /*<  -660 to +660. Right-Upward is orientation.*/
  int16_t wheel; /*<  -660 to +660. Counter-clockwise is orientation.*/
- uint8_t switch_messgae; /*<  Bit-0:isOffline(0-only,1-offline), Bit[1-2]:SwitchLeft(0-0b00,1-0b01,2-0x10), Bit[3-4]:SwitchRight(0-0b00,1-0b01,2-0x10)*/
+ uint8_t switch_messgae; /*<  Bit-0:isOnline(0-offline,1-online), Bit[1-2]:SwitchLeft(0-0b00,1-0b01,2-0x10), Bit[3-4]:SwitchRight(0-0b00,1-0b01,2-0x10)*/
 } mavlink_chs_remoter_info_t;
 
 #define MAVLINK_MSG_ID_CHS_REMOTER_INFO_LEN 11
@@ -56,7 +56,7 @@ typedef struct __mavlink_chs_remoter_info_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param switch_messgae  Bit-0:isOffline(0-only,1-offline), Bit[1-2]:SwitchLeft(0-0b00,1-0b01,2-0x10), Bit[3-4]:SwitchRight(0-0b00,1-0b01,2-0x10)
+ * @param switch_messgae  Bit-0:isOnline(0-offline,1-online), Bit[1-2]:SwitchLeft(0-0b00,1-0b01,2-0x10), Bit[3-4]:SwitchRight(0-0b00,1-0b01,2-0x10)
  * @param channel_0  -660 to +660. Right-Upward is orientation.
  * @param channel_1  -660 to +660. Right-Upward is orientation.
  * @param channel_2  -660 to +660. Right-Upward is orientation.
@@ -99,7 +99,7 @@ static inline uint16_t mavlink_msg_chs_remoter_info_pack(uint8_t system_id, uint
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param switch_messgae  Bit-0:isOffline(0-only,1-offline), Bit[1-2]:SwitchLeft(0-0b00,1-0b01,2-0x10), Bit[3-4]:SwitchRight(0-0b00,1-0b01,2-0x10)
+ * @param switch_messgae  Bit-0:isOnline(0-offline,1-online), Bit[1-2]:SwitchLeft(0-0b00,1-0b01,2-0x10), Bit[3-4]:SwitchRight(0-0b00,1-0b01,2-0x10)
  * @param channel_0  -660 to +660. Right-Upward is orientation.
  * @param channel_1  -660 to +660. Right-Upward is orientation.
  * @param channel_2  -660 to +660. Right-Upward is orientation.
@@ -168,7 +168,7 @@ static inline uint16_t mavlink_msg_chs_remoter_info_encode_chan(uint8_t system_i
  * @brief Send a chs_remoter_info message
  * @param chan MAVLink channel to send the message
  *
- * @param switch_messgae  Bit-0:isOffline(0-only,1-offline), Bit[1-2]:SwitchLeft(0-0b00,1-0b01,2-0x10), Bit[3-4]:SwitchRight(0-0b00,1-0b01,2-0x10)
+ * @param switch_messgae  Bit-0:isOnline(0-offline,1-online), Bit[1-2]:SwitchLeft(0-0b00,1-0b01,2-0x10), Bit[3-4]:SwitchRight(0-0b00,1-0b01,2-0x10)
  * @param channel_0  -660 to +660. Right-Upward is orientation.
  * @param channel_1  -660 to +660. Right-Upward is orientation.
  * @param channel_2  -660 to +660. Right-Upward is orientation.
@@ -258,7 +258,7 @@ static inline void mavlink_msg_chs_remoter_info_send_buf(mavlink_message_t *msgb
 /**
  * @brief Get field switch_messgae from chs_remoter_info message
  *
- * @return  Bit-0:isOffline(0-only,1-offline), Bit[1-2]:SwitchLeft(0-0b00,1-0b01,2-0x10), Bit[3-4]:SwitchRight(0-0b00,1-0b01,2-0x10)
+ * @return  Bit-0:isOnline(0-offline,1-online), Bit[1-2]:SwitchLeft(0-0b00,1-0b01,2-0x10), Bit[3-4]:SwitchRight(0-0b00,1-0b01,2-0x10)
  */
 static inline uint8_t mavlink_msg_chs_remoter_info_get_switch_messgae(const mavlink_message_t* msg)
 {
