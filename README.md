@@ -5,6 +5,10 @@
 This is the protocol of Fish Chassis System(CHS). Based on Mavlink v2.     
 Author: qianwan.Jin
 
+>Version: 2.1   
+Generate Date: 2024/01/25     
+Description: Add IMU message  
+
 >Version: 2.0   
 Generate Date: 2024/01/24     
 Description: Add remoter message  
@@ -42,8 +46,10 @@ Source: [FishChassis.xml](./FishChassis.xml)
 | chs_ctrl_info     | 0 | OrangePi | Chassis | Actively send | Control chassis' move.       |
 | chs_motor_info  | 1 | OrangePi or ESP32     | Chassis | Actively send | Control motors directly. |
 | chs_odom_info  | 2 | Chassis | OrangePi or ESP32 | Periodic 200Hz | Feedback variables of chassis. |
-| chs_servos_info | 3 | OrangePi or ESP32 | Chassis | Actively send | Control servo sockets pwm duty cycle. |
-| chs_manage_info | 4 | OrangePi or ESP32 | Chassis | Actively send | Control motors and servos enable or not, and reset quaterinon. |
+| chs_imu_info | 3 | Chassis | OrangePi | Actively send | Feedback accelmeter and gyrometer information. |
+| chs_servos_info | 4 | OrangePi or ESP32 | Chassis | Actively send | Control servo sockets pwm duty cycle. |
+| chs_manage_info | 5 | OrangePi or ESP32 | Chassis | Actively send | Control motors and servos enable or not, and reset quaterinon. |
+| chs_remoter_info | 6 | Chassis | OrangePi or ESP32 | Actively send | Feedback remoter information. |
 
 ><font color=red>Fatal Warning: the Motor and the Servo components will auto disable if it doesn't recevie any of valid control message in 500ms.</font>
 
@@ -74,8 +80,17 @@ Source: [FishChassis.xml](./FishChassis.xml)
   | ---------- | -------- | :----: | ----------- |
   | vx         | float | m/s | Feedback the velocity of x direction.|
   | vy      | float  | m/s | IFeedback the velocity of y direction.|
-  | vw | float | rad/s | Feedback the angular velocity of z yaw. |
+  | vw | float | rad/s | Feedback the angular velocity of z yaw.(Same to gyro[2]) |
   | quaternion      | float[4] | 1 | Indicate the quaternion. |
+
+- **chs_imu_info**      
+  Feedback accelmeter and gyrometer information.
+  
+  | Field      | Type     | Units  | Description |
+  | ---------- | -------- | :----: | ----------- |
+  | accel      | float[3] | m/s^2 | Feedback accelmeter message.|
+  | gyro       | float[3] | rad/s | Feedback gyrometer message.|
+
 
 - **chs_servos_info**
   Control servo pwm generating.  

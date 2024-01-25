@@ -1,7 +1,7 @@
 #pragma once
 // MESSAGE CHS_REMOTER_INFO PACKING
 
-#define MAVLINK_MSG_ID_CHS_REMOTER_INFO 5
+#define MAVLINK_MSG_ID_CHS_REMOTER_INFO 6
 
 
 typedef struct __mavlink_chs_remoter_info_t {
@@ -15,17 +15,17 @@ typedef struct __mavlink_chs_remoter_info_t {
 
 #define MAVLINK_MSG_ID_CHS_REMOTER_INFO_LEN 11
 #define MAVLINK_MSG_ID_CHS_REMOTER_INFO_MIN_LEN 11
-#define MAVLINK_MSG_ID_5_LEN 11
-#define MAVLINK_MSG_ID_5_MIN_LEN 11
+#define MAVLINK_MSG_ID_6_LEN 11
+#define MAVLINK_MSG_ID_6_MIN_LEN 11
 
 #define MAVLINK_MSG_ID_CHS_REMOTER_INFO_CRC 250
-#define MAVLINK_MSG_ID_5_CRC 250
+#define MAVLINK_MSG_ID_6_CRC 250
 
 
 
 #if MAVLINK_COMMAND_24BIT
 #define MAVLINK_MESSAGE_INFO_CHS_REMOTER_INFO { \
-    5, \
+    6, \
     "CHS_REMOTER_INFO", \
     6, \
     {  { "switch_messgae", NULL, MAVLINK_TYPE_UINT8_T, 0, 10, offsetof(mavlink_chs_remoter_info_t, switch_messgae) }, \

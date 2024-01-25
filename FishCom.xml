@@ -38,24 +38,30 @@
 			<description>Feedback of chassis variables.</description>
             <field type="float" name="vx" units="m/s">Feedback the velocity of x direction.</field>
             <field type="float" name="vy" units="m/s">Feedback the velocity of y dierction.</field>
-            <field type="float" name="vw" units="rad/s">Feedback the angular velocity of z yaw.</field>
+            <field type="float" name="vw" units="rad/s">Feedback the angular velocity of z yaw.(Same to gyro[2])</field>
             <field type="float[4]" name="quaternion" units="1">Indicate the quaternion.</field>
 		</message>
+		<!-- Feedback chassis's IMU information. -->
+		<message id="3" name="CHS_IMU_INFO">
+			<description>Feedback accelmeter and gyrometer information.</description>
+			<field type="float[3]" name="accel" units="m/s^2">Feedback accelmeter message.</field>
+			<field type="float[3]" name="gyro" units="rad/s">Feedback gyrometer message.</field>
+		</message>
         <!-- Control chassis's servo. -->
-		<message id="3" name="CHS_SERVOS_INFO">
+		<message id="4" name="CHS_SERVOS_INFO">
 			<description>Control servo pwm generating.</description>
 			<field type="uint16_t[7]" name="servos">Indicate duty cycle of servo timer. Range from 0 to 1999 indicates 0% to 100%.</field>
 		</message>
 		<!-- Control chassis's asserts -->
-		<message id="4" name="CHS_MANAGE_INFO">
+		<message id="5" name="CHS_MANAGE_INFO">
 			<description>Control chassis items.</description>
 			<field type="uint8_t" name="enable_chassis" instance="0" invalid="UINT8_MAX">Boolean. Set 1/0 to enable/disable chassis's close-loop control. Invalid with UINT8_MAX.</field>
             <field type="uint8_t" name="enable_servos" instance="0" invalid="UINT8_MAX">Boolean. Set true to enable/disable servo pwm generating. Invalid with UINT8_MAX.</field>
             <field type="uint8_t" name="reset_quaternion" instance="0" invalid="UINT8_MAX">Boolean. Set true to reset quaternion. Invalid with UINT8_MAX.</field>
 		</message>
 		<!-- Remoter Feedback -->
-		<message id="5" name="CHS_REMOTER_INFO">
-			<description>Control chassis items.</description>
+		<message id="6" name="CHS_REMOTER_INFO">
+			<description>Feedback remoter information.</description>
 			<field type="uint8_t" name="switch_messgae" instance="0" invalid="UINT8_MAX">Bit-0:isOnline(0-offline,1-online), Bit[1-2]:SwitchLeft(0-0b00,1-0b01,2-0x10), Bit[3-4]:SwitchRight(0-0b00,1-0b01,2-0x10)</field>
 			<field type="int16_t" name="channel_0" instance="0" invalid="UINT16_MAX">-660 to +660. Right-Upward is orientation.</field>
 			<field type="int16_t" name="channel_1" instance="0" invalid="UINT16_MAX">-660 to +660. Right-Upward is orientation.</field>

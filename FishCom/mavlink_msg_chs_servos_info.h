@@ -1,7 +1,7 @@
 #pragma once
 // MESSAGE CHS_SERVOS_INFO PACKING
 
-#define MAVLINK_MSG_ID_CHS_SERVOS_INFO 3
+#define MAVLINK_MSG_ID_CHS_SERVOS_INFO 4
 
 
 typedef struct __mavlink_chs_servos_info_t {
@@ -10,17 +10,17 @@ typedef struct __mavlink_chs_servos_info_t {
 
 #define MAVLINK_MSG_ID_CHS_SERVOS_INFO_LEN 14
 #define MAVLINK_MSG_ID_CHS_SERVOS_INFO_MIN_LEN 14
-#define MAVLINK_MSG_ID_3_LEN 14
-#define MAVLINK_MSG_ID_3_MIN_LEN 14
+#define MAVLINK_MSG_ID_4_LEN 14
+#define MAVLINK_MSG_ID_4_MIN_LEN 14
 
 #define MAVLINK_MSG_ID_CHS_SERVOS_INFO_CRC 79
-#define MAVLINK_MSG_ID_3_CRC 79
+#define MAVLINK_MSG_ID_4_CRC 79
 
 #define MAVLINK_MSG_CHS_SERVOS_INFO_FIELD_SERVOS_LEN 7
 
 #if MAVLINK_COMMAND_24BIT
 #define MAVLINK_MESSAGE_INFO_CHS_SERVOS_INFO { \
-    3, \
+    4, \
     "CHS_SERVOS_INFO", \
     1, \
     {  { "servos", NULL, MAVLINK_TYPE_UINT16_T, 7, 0, offsetof(mavlink_chs_servos_info_t, servos) }, \

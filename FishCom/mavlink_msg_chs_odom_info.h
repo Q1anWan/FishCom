@@ -7,7 +7,7 @@
 typedef struct __mavlink_chs_odom_info_t {
  float vx; /*< [m/s] Feedback the velocity of x direction.*/
  float vy; /*< [m/s] Feedback the velocity of y dierction.*/
- float vw; /*< [rad/s] Feedback the angular velocity of z yaw.*/
+ float vw; /*< [rad/s] Feedback the angular velocity of z yaw.(Same to gyro[2])*/
  float quaternion[4]; /*< [1] Indicate the quaternion.*/
 } mavlink_chs_odom_info_t;
 
@@ -52,7 +52,7 @@ typedef struct __mavlink_chs_odom_info_t {
  *
  * @param vx [m/s] Feedback the velocity of x direction.
  * @param vy [m/s] Feedback the velocity of y dierction.
- * @param vw [rad/s] Feedback the angular velocity of z yaw.
+ * @param vw [rad/s] Feedback the angular velocity of z yaw.(Same to gyro[2])
  * @param quaternion [1] Indicate the quaternion.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -87,7 +87,7 @@ static inline uint16_t mavlink_msg_chs_odom_info_pack(uint8_t system_id, uint8_t
  * @param msg The MAVLink message to compress the data into
  * @param vx [m/s] Feedback the velocity of x direction.
  * @param vy [m/s] Feedback the velocity of y dierction.
- * @param vw [rad/s] Feedback the angular velocity of z yaw.
+ * @param vw [rad/s] Feedback the angular velocity of z yaw.(Same to gyro[2])
  * @param quaternion [1] Indicate the quaternion.
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -148,7 +148,7 @@ static inline uint16_t mavlink_msg_chs_odom_info_encode_chan(uint8_t system_id, 
  *
  * @param vx [m/s] Feedback the velocity of x direction.
  * @param vy [m/s] Feedback the velocity of y dierction.
- * @param vw [rad/s] Feedback the angular velocity of z yaw.
+ * @param vw [rad/s] Feedback the angular velocity of z yaw.(Same to gyro[2])
  * @param quaternion [1] Indicate the quaternion.
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
@@ -242,7 +242,7 @@ static inline float mavlink_msg_chs_odom_info_get_vy(const mavlink_message_t* ms
 /**
  * @brief Get field vw from chs_odom_info message
  *
- * @return [rad/s] Feedback the angular velocity of z yaw.
+ * @return [rad/s] Feedback the angular velocity of z yaw.(Same to gyro[2])
  */
 static inline float mavlink_msg_chs_odom_info_get_vw(const mavlink_message_t* msg)
 {

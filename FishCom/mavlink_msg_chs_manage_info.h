@@ -1,7 +1,7 @@
 #pragma once
 // MESSAGE CHS_MANAGE_INFO PACKING
 
-#define MAVLINK_MSG_ID_CHS_MANAGE_INFO 4
+#define MAVLINK_MSG_ID_CHS_MANAGE_INFO 5
 
 
 typedef struct __mavlink_chs_manage_info_t {
@@ -12,17 +12,17 @@ typedef struct __mavlink_chs_manage_info_t {
 
 #define MAVLINK_MSG_ID_CHS_MANAGE_INFO_LEN 3
 #define MAVLINK_MSG_ID_CHS_MANAGE_INFO_MIN_LEN 3
-#define MAVLINK_MSG_ID_4_LEN 3
-#define MAVLINK_MSG_ID_4_MIN_LEN 3
+#define MAVLINK_MSG_ID_5_LEN 3
+#define MAVLINK_MSG_ID_5_MIN_LEN 3
 
 #define MAVLINK_MSG_ID_CHS_MANAGE_INFO_CRC 255
-#define MAVLINK_MSG_ID_4_CRC 255
+#define MAVLINK_MSG_ID_5_CRC 255
 
 
 
 #if MAVLINK_COMMAND_24BIT
 #define MAVLINK_MESSAGE_INFO_CHS_MANAGE_INFO { \
-    4, \
+    5, \
     "CHS_MANAGE_INFO", \
     3, \
     {  { "enable_chassis", NULL, MAVLINK_TYPE_UINT8_T, 0, 0, offsetof(mavlink_chs_manage_info_t, enable_chassis) }, \
