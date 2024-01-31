@@ -5,6 +5,10 @@
 This is the protocol of Fish Chassis System(CHS). Based on Mavlink v2.     
 Author: qianwan.Jin
 
+>Version: 2.2   
+Generate Date: 2024/01/31     
+Description: Fix ducuments  
+
 >Version: 2.1   
 Generate Date: 2024/01/25     
 Description: Add IMU message  
@@ -97,7 +101,7 @@ Source: [FishChassis.xml](./FishChassis.xml)
 
   | Field      | Type     | Units  | Description |
   | ---------- | -------- | :----: | ----------- |
-  | servos  | uint16_t[7]  | 500us | Indicate duty cycle of servo timer. Range from 0 to 1999 indicates 0% to 100%. |
+  | servos  | uint16_t[7]  | 500us | Indicate duty cycle of servo timer. Range from 499 to 2499 indicates 500/20000 to 2500/20000, frequency is 50Hz. |
 
 
 - **chs_manage_info**

@@ -50,7 +50,7 @@
         <!-- Control chassis's servo. -->
 		<message id="4" name="CHS_SERVOS_INFO">
 			<description>Control servo pwm generating.</description>
-			<field type="uint16_t[7]" name="servos">Indicate duty cycle of servo timer. Range from 0 to 1999 indicates 0% to 100%.</field>
+			<field type="uint16_t[7]" name="servos">Indicate duty cycle of servo timer. Range from 499 to 24999 indicates 500/20000 to 2500/20000.</field>
 		</message>
 		<!-- Control chassis's asserts -->
 		<message id="5" name="CHS_MANAGE_INFO">
