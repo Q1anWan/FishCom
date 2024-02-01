@@ -67,7 +67,7 @@ Source: [FishChassis.xml](./FishChassis.xml)
   | ---------- | -------- | :----: | ----------- |
   | vx | float |   m/s   | Indicate velocity of x direction. Range [-2.0, 2.0]. |
   | vy | float |   m/s   | Indicate velocity of x direction. Range [-2.0, 2.0]. |
-  | vw | float |   m/s   | Indicate angular velocity of w direction. Range [-2\*PI, 2\*PI]. |
+  | vw | float |   rad/s   | Indicate angular velocity of w direction. Range [-2\*PI, 2\*PI]. |
 
 
 - **chs_motor_info**   
